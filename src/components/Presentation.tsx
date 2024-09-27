@@ -21,6 +21,13 @@ export default function Presentation() {
                     </p>
                 </div>
             </div>
+
+            <div className="relative z-10 w-full max-w-4xl mt-10 p-6 bg-white shadow-lg rounded-lg">
+                <h2 className="text-2xl font-semibold mb-4">Sobre mí</h2>
+                <p className="text-lg">
+                    ¡Welcome to my Portfolio! My name is Alejandro José Coraspe Cedeño, I'm from Venezuela and I'm currently dedicated to software development. I chose this path in my life because I was interested in technology from a young age, and when I discovered that this way you could create and interact with it, I fell in love with software development.
+                </p>
+            </div>
         </main>
     )
 }

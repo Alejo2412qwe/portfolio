@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a.group::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+a.group:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* card.css */
+.card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    margin: 16px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-image {
+    flex: 1;
+    max-width: 300px;
+    object-fit: cover;
+}
+
+.card-content {
+    flex: 2;
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.tech-icons img {
+    width: 60px;
+    height: 60px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card-content {
+        padding: 12px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-description {
+        font-size: 0.875rem;
+    }
+
+    .tech-icons img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Alineación de tarjetas en pantallas grandes */
+@media (min-width: 769px) {
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        /* Espaciado entre tarjetas */
+    }
+}
+
+/* floatingButton.css */
+.floating-button {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* Asegúrate de que esté encima de otros elementos */
+    transition: opacity 0.5s ease;
+}
+
+.floating-button.hidden {
+    opacity: 0;
+}
+
+.floating-button.visible {
+    opacity: 1;
+}

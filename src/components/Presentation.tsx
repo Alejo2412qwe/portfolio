@@ -1,33 +1,63 @@
-import { ServerIcon, CommandLineIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'; // Importa íconos adecuados
+import { ServerIcon, CodeBracketIcon, CpuChipIcon } from '@heroicons/react/24/outline';
 
 export default function Presentation() {
     return (
-        <main className="relative p-4 text-black w-full flex flex-col items-center py-32 md:py-56 bg-cover bg-center">
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
-            <div className="relative z-10 flex flex-col items-center text-center md:flex-row md:text-left">
-                <img
-                    src="/fotoPerfil.jpg"
-                    alt="foto perfil"
-                    className="rounded h-48 md:h-56 mb-4 md:mb-0 md:mr-8"
-                />
-                <div className="mt-4 md:mt-0">
-                    <p className="text-3xl md:text-4xl font-bold">ALEJANDRO CORASPE</p>
-                    <p className="text-xl md:text-2xl flex items-center justify-center md:justify-start mt-2 md:mt-4">
-                        <ComputerDesktopIcon className="h-6 w-6 mr-2" /> Technologist in Software Development
-                    </p>
-                    <p className="text-xl md:text-2xl flex items-center justify-center md:justify-start mt-2">
-                        <ServerIcon className="h-6 w-6 mr-2" /> BackEnd
-                        <CommandLineIcon className="h-6 w-6 ml-4 mr-2" /> DevOps
-                    </p>
-                </div>
+        <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white pt-20 pb-32">
+            <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-fixed opacity-10" />
             </div>
 
-            <div className="relative z-10 w-full max-w-4xl mt-10 p-6 bg-white shadow-lg rounded-lg">
-                <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-                <p className="text-lg">
-                    ¡Welcome to my Portfolio! My name is Alejandro José Coraspe Cedeño, I'm from Venezuela and I'm currently dedicated to software development. I chose this path in my life because I was interested in technology from a young age, and when I discovered that this way you could create and interact with it, I fell in love with software development.
-                </p>
+            <div className="container mx-auto px-4 z-10">
+                <div className="flex flex-col lg:flex-row items-center gap-12">
+                    <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
+                        <img
+                            src="/fotoPerfil.jpg"
+                            alt="Alejandro Coraspe"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <div className="text-center lg:text-left max-w-2xl">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                            Alejandro Coraspe
+                        </h1>
+
+                        <div className="space-y-3 mb-8">
+                            <p className="text-xl flex items-center justify-center lg:justify-start gap-3">
+                                <CpuChipIcon className="h-6 w-6 text-blue-400" />
+                                <span>Software Development Technologist</span>
+                            </p>
+                            <p className="text-xl flex items-center justify-center lg:justify-start gap-3">
+                                <ServerIcon className="h-6 w-6 text-blue-400" />
+                                <span>Backend Developer</span>
+                            </p>
+                            <p className="text-xl flex items-center justify-center lg:justify-start gap-3">
+                                <CodeBracketIcon className="h-6 w-6 text-blue-400" />
+                                <span>DevOps Enthusiast</span>
+                            </p>
+                        </div>
+
+                        <p className="text-lg text-gray-300 mb-8">
+                            Welcome to my portfolio! I'm a passionate software developer from Venezuela with expertise in building robust backend systems and implementing DevOps practices.
+                        </p>
+
+                        <div className="flex gap-4 justify-center lg:justify-start">
+                            <a
+                                href="#projects"
+                                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
+                            >
+                                View My Work
+                            </a>
+                            <a
+                                href="#contact"
+                                className="px-6 py-3 bg-transparent border border-white hover:bg-white/10 rounded-lg font-medium transition-colors"
+                            >
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </main>
-    )
+        </section>
+    );
 }
